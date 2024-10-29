@@ -49,12 +49,12 @@ export default function MoviesList() {
   return (
     <>
       <div className=" flex flex-col items-center justify-center mb-4 w-full pt-11">
-        <p className="text-white text-[20px] pb-10">
+        <p className="text-[20px] pb-10">
           Find your Favorite TV Shows, Movies...
         </p>
         <div className="w-[60%]">
           <input
-            className="p-3 rounded-md text-black h-[40px] w-[90%] placeholder:text-[15px] placeholder:text-gray-400"
+            className="p-3 rounded-md border border-gray-300 text-black h-[40px] w-[90%] placeholder:text-[15px] placeholder:text-gray-400"
             type="text"
             placeholder="Search for movies..."
             value={query}
@@ -72,12 +72,12 @@ export default function MoviesList() {
         </div>
       </div>
 
-      <h1 className="text-white text-[30px] pl-4">
+      <h1 className="text-[30px] pl-4">
         {query ? `Search Results for "${query}"` : "Popular Movies"}
       </h1>
 
       {loading ? (
-        <p className="text-white">Loading...</p>
+        <p className="">Loading...</p>
       ) : (
         <div className="min-h-screen p-4 flex flex-wrap gap-4 justify-center">
           {movies.length > 0 ? (

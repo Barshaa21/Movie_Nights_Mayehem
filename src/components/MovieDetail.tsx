@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import RelatedMoviesList from "./RelatedMovies";
 import { FaPlus } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setMovieNights } from "../features/MovieNightsSlice";
 
 interface Movie {
   id: number;
@@ -12,14 +15,19 @@ interface Movie {
   release_date: string;
   vote_average: number;
   cast: string;
+  genres: [];
 }
 
 export default function MovieDetail() {
   const { movieId } = useParams<{ movieId: string }>();
+  // const apiKey = import.meta.env.VITE_API_KEY;
   const apiKey = "b09801335a6316ac2ec98b2dfec3e9ce";
   const baseUrl = "https://api.themoviedb.org/3";
   const [movie, setMovie] = useState<Movie | null>(null);
+  // const [movieNights, setMovieNights] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -38,6 +46,18 @@ export default function MovieDetail() {
 
     fetchMovieDetails();
   }, [movieId]);
+
+  const addMovie = () => {
+    navigate("/movie-nights");
+    const newMovie = {
+      id: movie?.id,
+      title: movie?.title,
+      genre: movie?.genres,
+      release_date: movie?.release_date,
+    };
+    // setMovieNights([...movieNights, newMovie]);
+    dispatch(setMovieNights(movie));
+  };
 
   if (loading) {
     return <p className="text-white">Loading...</p>;
@@ -67,7 +87,10 @@ export default function MovieDetail() {
               alt={movie.title}
               className="max-w-md rounded-xl object-cover m-5  h-[35rem] w-[20rem]"
             />
-            <button className="bg-[#333] flex gap-4 justify-center text-white rounded-xl p-5 font-extrabold m-5">
+            <button
+              onClick={addMovie}
+              className="bg-[#333] flex gap-4 justify-center text-white rounded-xl p-5 font-extrabold m-5"
+            >
               <FaPlus />
               Add to Movies Night
             </button>

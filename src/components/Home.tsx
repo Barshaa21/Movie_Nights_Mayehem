@@ -23,7 +23,7 @@ export default function Home(): ReactElement {
   // });
   return (
     <div className="h-screen pt-[4.5rem] min-h-[100vh]">
-      <div className="bg-[#1F0F53] ">
+      <div>
         <div>
           {/* <div className=" h-full text-white text-center">
             <span className="text-[6rem]">

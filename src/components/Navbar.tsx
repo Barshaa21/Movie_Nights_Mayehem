@@ -27,10 +27,7 @@ export default function Navbar() {
           <ul className="flex space-x-6  text-white">
             <li className="flex gap-3">
               <img className="w-[2rem]" src={Logo} />
-              <a
-                href="/"
-                className="hover:text-gray-300 text-lg text-[#dddb62]"
-              >
+              <a href="/" className="hover:text-gray-300 text-lg mr-[10rem]">
                 Movie Mayhem
               </a>
             </li>
@@ -42,27 +39,27 @@ export default function Navbar() {
                 About
               </a>
             </li> */}
-            {/* <li>
-              <Link
-                to="/contact"
-                className="hover:text-gray-300 text-[1.25rem] text-center"
-              >
-                Contact
-              </Link>
-            </li> */}
             <li>
               <Link
-                to="/allTemplates"
+                to="/movie-nights"
                 className="hover:text-gray-300 text-[1.25rem] text-center"
               >
-                Movies
+                Movie Nights
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                className="hover:text-gray-300 text-[1.25rem] text-center"
+              >
+                Popular Movies
               </Link>
             </li>
           </ul>
           <Link to="/login">
             <button
               type="submit"
-              className="w-[5rem] mr-7 text-white bg-[#DD6275] hover:bg-slate-200 font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue active:bg-gray-200"
+              className="w-[5rem] mr-7 bg-white hover:bg-slate-200 font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue active:bg-gray-200"
             >
               Log In
             </button>
