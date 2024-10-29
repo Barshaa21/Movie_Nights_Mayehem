@@ -1,16 +1,10 @@
 //
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../assets/logo-main-2.png";
 import { useLocation } from "react-router-dom";
 
-const getToken = () => {
-  const token = localStorage.getItem("token");
-  return token ? JSON.parse(token) : "";
-};
-
 export default function Navbar() {
   const location = useLocation();
-  const token = getToken();
 
   const hiddenPaths = [
     "/template1",

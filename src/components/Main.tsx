@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { Navigate, Outlet } from "react-router-dom";
-import SideBar from "./portfolio/SideBar";
+import { Navigate } from "react-router-dom";
 
 const getToken = () => {
   const token = localStorage.getItem("token");
@@ -8,11 +6,6 @@ const getToken = () => {
 };
 
 export default function Main() {
-  const [ShowSidebar, setShowSidebar] = useState(true);
-
-  const viewSidebar = () => {
-    setShowSidebar(!ShowSidebar);
-  };
   const tokens = getToken();
   const isEditRoute = location.pathname === "/main/editPortfolio";
 
@@ -20,15 +13,15 @@ export default function Main() {
     <>
       <div>
         {tokens ? (
-          <div className="">
+          <div>
             {/* <Product /> */}
-            <SideBar ShowSidebar={ShowSidebar} viewSidebar={viewSidebar} />
+            {/* <SideBar ShowSidebar={ShowSidebar} viewSidebar={viewSidebar} /> */}
             <div
               className={`ml-[5rem] px-[2rem]   bg-gray-200 min-h-screen ${
                 isEditRoute ? "py-[3rem] pt-[4rem]" : "py-[1.5rem]"
               }`}
             >
-              <Outlet context={[ShowSidebar]} />
+              {/* <Outlet context={[ShowSidebar]} /> */}
             </div>
           </div>
         ) : (

@@ -2,9 +2,8 @@ import { ReactElement } from "react";
 // import Slide from "react-reveal/Slide";
 // @ts-ignore
 import Zoom from "react-reveal/Zoom";
-import Template1 from "./portfolio/templates/template1/Template1";
-import { Link } from "react-router-dom";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
+// import { Link } from "react-router-dom";
+// import { useTypewriter, Cursor } from "react-simple-typewriter";
 import MoviesList from "./MoviesList";
 
 // interface NavbarProps {
@@ -16,12 +15,12 @@ import MoviesList from "./MoviesList";
 // }
 
 export default function Home(): ReactElement {
-  const [headingText] = useTypewriter({
-    words: ["Awesome", "Customized", "Beautiful"],
-    loop: Infinity,
-    typeSpeed: 100,
-    deleteSpeed: 40,
-  });
+  // const [headingText] = useTypewriter({
+  //   words: ["Awesome", "Customized", "Beautiful"],
+  //   loop: Infinity,
+  //   typeSpeed: 100,
+  //   deleteSpeed: 40,
+  // });
   return (
     <div className="h-screen pt-[4.5rem] min-h-[100vh]">
       <div className="bg-[#1F0F53] ">
