@@ -49,12 +49,6 @@ export default function MovieDetail() {
 
   const addMovie = () => {
     navigate("/movie-nights");
-    const newMovie = {
-      id: movie?.id,
-      title: movie?.title,
-      genre: movie?.genres,
-      release_date: movie?.release_date,
-    };
     // setMovieNights([...movieNights, newMovie]);
     dispatch(setMovieNights(movie));
   };

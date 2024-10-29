@@ -1,17 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function MoviesNights() {
-  const [loading, setLoading] = useState(true);
-
   const movieNightsData = useSelector((state: any) => state.movieNights.value);
 
-  useEffect(() => {
-    if (movieNightsData.length > 0) {
-      setLoading(false);
-    }
-  }, [movieNightsData]);
+  useEffect(() => {}, [movieNightsData]);
 
   return (
     <>
