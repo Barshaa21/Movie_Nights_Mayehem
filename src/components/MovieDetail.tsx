@@ -8,7 +8,7 @@ import { setMovieNights } from "../features/MovieNightsSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loader from "../Loader";
-import StarComponent from "./starComponent";
+import StarComponent from "./StarComponent";
 
 interface Movie {
   id: number;
