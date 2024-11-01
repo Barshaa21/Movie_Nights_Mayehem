@@ -34,7 +34,7 @@ REACT_APP_API_KEY=your_api_key_here
 
 ### Running the Application
 Once all dependencies are installed and environment variables are set up, start the development server with the following command:
-npm run dev
+- npm run dev
 
 # React + TypeScript + Vite
 
