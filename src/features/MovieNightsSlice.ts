@@ -7,8 +7,7 @@ export const MovieNightsSlice = createSlice({
   initialState,
   reducers: {
     setMovieNights: (state, action) => {
-      state.value.push(action.payload);
-      return state;
+      state.value = [...state.value, action.payload];
     },
   },
 });
